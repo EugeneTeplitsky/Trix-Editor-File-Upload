@@ -70,7 +70,7 @@ def upload_file():
         current_app.logger.error(f'Error molecule.check(): {type(e)}')
         return jsonify({'error': 'Incorrect molecule'}), 400
 
-    return loader(file, '54bf4dc004ab30dfdb5e521092d1ce0b277dca71485400af5ab706946397b7c9')
+    return loader(file, molecule.bundle)
 
 
 @module.route('/removal/<string:identifier>', methods=['DELETE'])
